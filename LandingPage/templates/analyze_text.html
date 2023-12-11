@@ -1,0 +1,16 @@
+<!-- sentiment_analysis_app/templates/analyze_text.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Text</title>
+</head>
+<body>
+    <h2>Analyze Text</h2>
+    <form method="post" action="{% url 'analyze_text' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

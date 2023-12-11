@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+
+        .navbar-brand {
+            width: 200px;
+            height: 50px;
+        }
+
+        .navbar-brand img {
+            width: 300px;
+        }
+
+        .register:hover {
+            background-color: linear-gradient(90deg, #0C9CD2 0%, #6DC388 100%);
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+<body style="background: url(../static/images/login-background.png) center;">
+    <nav class="navbar navbar-expand-lg" >
+        <div class="container-fluid align-items-center">
+          <a class="navbar-brand mt-2 ms-3" href="index.html">
+            <img src="../static/images/logo.png" alt="" srcset="">
+            </a>
+        </div>
+      </nav>
+<div class = "container mt-5">
+    <form method = "POST" class = "col-6 mx-auto card p-5 shadow-lg" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1 style="color: green;">SignUp</h1>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            {{ message }}
+        </div>
+        {%endfor%}
+        {% endif %}
+        <div class="mb-3">
+            <div class="input-group">
+                <span class="input-group-text">First and Last name</span>
+                <input type="text" aria-label="First name" name = "first_name" class="form-control" placeholder = "First Name">
+                <input type="text" aria-label="Last name" name = "last_name" class="form-control" placeholder = "Last Name">
+            </div>
+        </div>
+        <div class = "mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name = "email" aria-describedby="emailHelp">
+        </div>
+        <div class = "mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" name = "password" id="exampleInputPassword1">
+        </div>
+        <div class = "mb-3">
+            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" name = "confirm_password" id="exampleInputPassword1">
+        </div>
+        <p>Already have Account? <a href = "/signin" style="color: green;">Login</a></p>
+        <button type="submit" class="btn btn-success">Register</button>
+      </form>
+</div>
+
+</body>
+</html>

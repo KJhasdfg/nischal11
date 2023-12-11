@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h2>Analysis Results</h2>
+    <ul>
+        {% for text in texts %}
+            <li>{{ text.text }} - Sentiment: {{ text.sentiment }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
